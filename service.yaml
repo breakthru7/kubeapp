@@ -1,0 +1,13 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: kube-app-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    run: kube-app
+  ports:
+    - port: 8080
+      targetPort: 80
+      #8080 port of the service should be mapped to port 80 of the container 
